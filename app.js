@@ -9,7 +9,7 @@ let currentQuery = '';
 const limit = 20;
 
 async function getMovies(page = 1, query = '') {
-  const res = await fetch(`https://yts.lt/api/v2/list_movies.json?limit=${limit}&page=${page}&query_term=${query}`);
+  const res = await fetch(`https://yts.bz/api/v2/list_movies.json?limit=${limit}&page=${page}&query_term=${query}`);
   const data = await res.json();
   const movies = data.data.movies || [];
   totalPages = Math.ceil((data.data.movie_count || 0) / limit);
@@ -100,7 +100,7 @@ const movieId = params.get('id');
 
 async function loadMovieDetails() {
   if (!movieId) return;
-  const res = await fetch(`https://yts.lt/api/v2/movie_details.json?movie_id=${movieId}`);
+  const res = await fetch(`https://yts.bz/api/v2/movie_details.json?movie_id=${movieId}`);
   const data = await res.json();
   const movie = data.data.movie;
 
