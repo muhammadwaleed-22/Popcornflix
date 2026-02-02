@@ -127,7 +127,7 @@ async function loadMovieDetails() {
 async function loadSimilarMovies(id) {
   const container = document.getElementById('similarMovies');
   if (!container) return;
-  const res = await fetch(`https://yts.lt/api/v2/movie_suggestions.json?movie_id=${id}`);
+  const res = await fetch(`https://yts.bz/api/v2/movie_suggestions.json?movie_id=${id}`);
   const data = await res.json();
   data.data.movies.slice(0, 4).forEach(m => {
     const div = document.createElement('div');
